@@ -1,7 +1,5 @@
 # Timer-VanillaJS
 
----
-
 A timer app inspired by Microsoft's.
 
 Todo:
