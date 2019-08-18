@@ -1,5 +1,6 @@
 * {
     box-sizing: border-box;
+    outline: none;
 }
 
 html, body, p, input {
@@ -9,6 +10,11 @@ html, body, p, input {
 
 input {
     border: none;
+}
+
+button {
+    border: none;
+    background: unset;
 }
 
 .main {
@@ -38,8 +44,91 @@ input {
     /* font-size: 5rem; */
 }
 
-.input:focus {
+/* .input:focus {
     outline: none;
+} */
+.modal-show {
+    transform: scale(1);
+    transition: .4s;
+}
+
+.modal-show > .modal-content {
+    transform: translate(-50%, -50%) scale(1);
+    /* transition-delay: 5s; */
+    transition: .8s;
+    transition-timing-function: cubic-bezier(.96,.79,.3,1.36);
+}
+
+.modal-disappear {
+    transform: scale(0);
+    transition: .4s;
+}
+
+.modal-disappear > .modal-content {
+    transform: translate(-50%, -50%) scale(0);
+    /* transition-delay: 5s; */
+    transition: .8s;
+    transition-timing-function: cubic-bezier(.96,.79,.3,1.36);
+}
+
+.modal {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, .5);
+}
+
+.modal-content {
+    /* transition: 5s; */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    /* transform: translate(-50%, -50%); */
+    width: 27rem;
+    height: 16rem;
+    background-color: whitesmoke;
+    box-shadow: 0 0 2.5rem darkgray;
+    padding: 2rem 3rem;
+}
+
+.modal-tx {
+    font-size: 2rem;
+}
+
+.modal-btns {
+    margin-top: 7rem;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    width: 100%;
+}
+
+.btn {
+    padding: .5rem 1rem;
+    cursor: pointer;
+}
+
+.btn.cancel {
+    background-color: gainsboro;
+}
+
+.btn.confirm {
+    color: #152b23;
+    background-color: #66D3AB;
+}
+
+.btn + .btn {
+    margin-left: 1rem;
+}
+
+.btn.cancel:hover {
+    background-color: #7b7878;
+}
+
+.btn.confirm:hover {
+    background-color: #3f866c;
 }
 
 @media screen and (min-width: 800px) {

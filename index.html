@@ -12,13 +12,26 @@
 <body>
     <main class="main">
         <section class="timer-sec">
-            <input type="number" class="input" placeholder="00" maxlength="2" min="0">
+            <input type="number" class="input" placeholder="00" min="0" max="60" name="hours">
             :
-            <input type="number" class="input" placeholder="00" maxlength="2" min="0">
+            <input type="number" class="input" placeholder="00" min="0" max="60" name="minutes">
             :
-            <input type="number" class="input" placeholder="00" maxlength="2" min="0">
+            <input type="number" class="input" placeholder="00" min="0" max="60" name="seconds">
         </section>
+
+        <!-- Test code -->
+        <!-- <button id="for-test">test</button> -->
     </main>
+
+    <section class="modal modal-disappear">
+        <main class="modal-content">
+            <p class="modal-tx">Continue adding time?</p>
+            <div class="modal-btns">
+                <button class="btn cancel">No</button>
+                <button class="btn confirm">Yes</button>
+            </div>
+        </main>
+    </section>
 
     <script src="script.js"></script>
 </body>
