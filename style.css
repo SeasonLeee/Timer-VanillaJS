@@ -49,7 +49,7 @@ button {
 } */
 .modal-show {
     transform: scale(1);
-    transition: .4s;
+    transition: .25s;
 }
 
 .modal-show > .modal-content {
@@ -61,7 +61,7 @@ button {
 
 .modal-disappear {
     transform: scale(0);
-    transition: .4s;
+    transition: .25s;
 }
 
 .modal-disappear > .modal-content {
