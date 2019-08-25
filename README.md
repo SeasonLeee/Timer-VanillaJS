@@ -23,9 +23,9 @@ So this leads to my another adventure, to dive deeper into the framework I have 
 But this thing is not done yet, these are the things need to finish in the future,
 
 Todo:
-- [] Notify user when the timer is completed.
-- [] Finishing the onConfirm(), confirm button's funcion
-- [] Rewite this whole thing in Angular and VueJS
+- [ ] Notify user when the timer is completed.
+- [ ] Finishing the onConfirm(), confirm button's funcion
+- [ ] Rewite this whole thing in Angular and VueJS
 
 Words to remember...
 
