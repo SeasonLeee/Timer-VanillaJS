@@ -168,6 +168,16 @@ button {
     background-color: #3f866c;
 }
 
+@media screen and (max-width: 425px) {
+    .how-to {
+        width: 80vw;
+    }
+
+    .input {
+        font-size: 5rem;
+    }
+}
+
 @media screen and (min-width: 800px) {
     .input {
         width: 22vw;
