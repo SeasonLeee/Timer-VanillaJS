@@ -47,27 +47,17 @@
 
     function onCancel(element, index, fn) {
         let cancelBtn = document.querySelector('.cancel');
-        cancelBtn.addEventListener('click', function jianglin(event) {
-            event.stopPropagation();
-            event.preventDefault();
-
+        cancelBtn.addEventListener('click', function eventOption() {
             inputs.forEach(ele => ele.setAttribute('readonly', ''));
-            controlModal(cancelBtn, jianglin);
-            console.log('On Cancel');
+            controlModal(cancelBtn, eventOption);
             fn(element, index)
         });
     }
 
     function onConfirm() {
         let confirmBtn = document.querySelector('.confirm');
-
-        confirmBtn.addEventListener('click', function jianglinlin(event) {
-            console.log('on confirm');
-
-            event.stopPropagation();
-            event.preventDefault();
-
-            controlModal(confirmBtn, jianglinlin);
+        confirmBtn.addEventListener('click', function eventOption() {
+            controlModal(confirmBtn, eventOption);
         })
     }
 
@@ -76,17 +66,12 @@
 
         if (modal.classList.contains('modal-disappear')) {
             modal.classList.replace('modal-disappear', 'modal-show');
-            console.log('show');
         } else {
             if (element) {
                 element.removeEventListener('click', func)
             }
-
             modal.classList.replace('modal-show', 'modal-disappear');
-            console.log('disappear');
-
-        }
-        // modal.classList.toggle('modal')        
+        }      
     }
 
     function calculateTime(element, index) {
