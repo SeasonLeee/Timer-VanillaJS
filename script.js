@@ -29,7 +29,7 @@
                 if (element.checkValidity()) {
                     // keyPressedEles.push(element);
                     // element.setAttribute('readonly', '');
-                    controlModal(element, index);
+                    showModal(element, index);
                 }
                 element.reportValidity(); // a pop-up will based on the sesult of above
                 // if (!element.checkValidity()) element.value = '';
@@ -39,14 +39,10 @@
         }
     }
 
-    function controlModal(element, index) {
-        let modal = document.querySelector('.modal');
-        if (modal.classList.contains('modal-disappear')) {
-            modal.classList.replace('modal-disappear', 'modal-show');
-        } else {
-            modal.classList.replace('modal-show', 'modal-disappear');
-        }
+    function showModal(element, index) {
+        controlModal();
         onCancel(element, index, calculateTime);
+        onConfirm();
     }
 
     function onCancel(element, index, fn) {
@@ -60,7 +56,20 @@
     }
 
     function onConfirm() {
+        let confirmBtn = document.querySelector('.confirm');
 
+        confirmBtn.addEventListener('click', () => {
+            controlModal();
+        })
+    }
+
+    function controlModal() {
+        let modal = document.querySelector('.modal');
+        if (modal.classList.contains('modal-disappear')) {
+            modal.classList.replace('modal-disappear', 'modal-show');
+        } else {
+            modal.classList.replace('modal-show', 'modal-disappear');
+        }        
     }
 
     function calculateTime(element, index) {
