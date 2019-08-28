@@ -47,9 +47,12 @@
 
     function onCancel(element, index, fn) {
         let cancelBtn = document.querySelector('.cancel');
-        cancelBtn.addEventListener('click', () => {
+        cancelBtn.addEventListener('click', function jianglin(event) {
+            event.stopPropagation();
+            event.preventDefault();
+
             inputs.forEach(ele => ele.setAttribute('readonly', ''));
-            controlModal();
+            controlModal(cancelBtn, jianglin);
             console.log('On Cancel');
             fn(element, index)
         });
@@ -58,18 +61,32 @@
     function onConfirm() {
         let confirmBtn = document.querySelector('.confirm');
 
-        confirmBtn.addEventListener('click', () => {
-            controlModal();
+        confirmBtn.addEventListener('click', function jianglinlin(event) {
+            console.log('on confirm');
+
+            event.stopPropagation();
+            event.preventDefault();
+
+            controlModal(confirmBtn, jianglinlin);
         })
     }
 
-    function controlModal() {
+    function controlModal(element, func) {
         let modal = document.querySelector('.modal');
+
         if (modal.classList.contains('modal-disappear')) {
             modal.classList.replace('modal-disappear', 'modal-show');
+            console.log('show');
         } else {
+            if (element) {
+                element.removeEventListener('click', func)
+            }
+
             modal.classList.replace('modal-show', 'modal-disappear');
-        }        
+            console.log('disappear');
+
+        }
+        // modal.classList.toggle('modal')        
     }
 
     function calculateTime(element, index) {
