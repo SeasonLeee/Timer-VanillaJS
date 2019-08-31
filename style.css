@@ -32,8 +32,8 @@ button {
     width: 60vw;
 }
 
-.how-to li {
-    /* font-family: 'Lexend Deca', sans-serif; */
+.how-to > li:first-child {
+    text-transform: uppercase;
 }
 
 .how-to li + li {

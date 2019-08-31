@@ -23,7 +23,7 @@
             // console.log('hi', index);
             if (event.which == 13 || event.keyCode == 13) {
                 // console.log('enter key was hit');
-                // element.checkValidity(); // using when need to get the validity of the input
+                // element.checkValidity(); /// using when need to get the validity of the input
                 // console.log('eleme.checkValidity()', element.checkValidity());
 
                 if (element.checkValidity()) {
@@ -31,7 +31,7 @@
                     // element.setAttribute('readonly', '');
                     showModal(element, index);
                 }
-                element.reportValidity(); // a pop-up will based on the sesult of above
+                element.reportValidity(); /// a pop-up will based on the sesult of above
                 // if (!element.checkValidity()) element.value = '';
             }
 
@@ -137,35 +137,5 @@
         }
     }
 
-    /// Test code
-    // let testBtn = document.querySelector('#for-test');
-    // testBtn.addEventListener('click', () => {
-    //     let lastInput = document.querySelectorAll('.input')[2];
-    //     lastInput.setAttribute('readonly', '');
-    //     setInterval(() => {
-    //         if (lastInput.value != base) {
-    //             lastInput.value = parseInt(lastInput.value) + 1;
-    //         } else {
-    //             return;
-    //         }
-    //     }, 1000);
-    // });
-
     addEvent();
-    // onCancel();
 })();
-
-/// 1. issue#1 why try to set to dom element's value not working
-// when set the value of dom element
-// set it directly with the property name,
-// NOT the reference of the property name
-// which should work since that's reference
-// once the reference's changed,
-// the original is changed too.
-// 
-// ...needs further investigation
-
-/// 2. value retrived from input.value is STRING
-// for god's sake, I long for a strong-type programming language
-
-///

@@ -22,9 +22,26 @@ So this leads to my another adventure, to dive deeper into the framework I have 
 
 But this thing is not done yet, these are the things need to finish in the future,
 
-Todo:
-- [ ] Notify user when the timer is completed.
-- [ ] Rewite this whole thing in Angular and VueJS
+
+## lessons learned during the first version: (I recorded these as quesions in the js as comments, now I filled the gap)
+
+1. Only object can have reference!
+   
+   I know this is like a JS 101, but I actually made this mistakes when I tried to create seperate variable to store input element's value as I want to modify it more flexibly.
+
+   Well, that didn't work. If you are an experienced JS dev, you must be lol-ing right now, right?
+
+   So, what I thought was the variable store a reference to the object's property, because it's object's property and I think, well, object's stuff, it must be able to reference, too! 
+
+   BAM! WRONG!
+
+   Only, object itself can be referenced. Unless it's property is also an object, when you try to pass it to a variable, you are passing the value NOT reference.
+
+   Well... 
+
+2. Even if the input element I explicitly set its type as number, whatever I input will become string....
+
+   ...well...
 
 *update: 28-8-2019:*
 
