@@ -20,7 +20,11 @@ With the help of framework, I never realize how much work I don't need to do!
 
 So this leads to my another adventure, to dive deeper into the framework I have used!😎
 
-But this thing is not done yet, these are the things need to finish in the future,
+*update: 28-8-2019:*
+
+- [x] Finishing the onConfirm(), confirm button's funcion
+
+and from now on, I moved future to-do to issue tab 
 
 
 ## lessons learned during the first version: 
@@ -43,9 +47,6 @@ But this thing is not done yet, these are the things need to finish in the futur
 
    ...well...
 
-*update: 28-8-2019:*
-
-- [x] Finishing the onConfirm(), confirm button's funcion
 
 ## lessons learned from this update...
 
