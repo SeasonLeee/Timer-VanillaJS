@@ -23,8 +23,8 @@ So this leads to my another adventure, to dive deeper into the framework I have 
 But this thing is not done yet, these are the things need to finish in the future,
 
 
-## lessons learned during the first version: (I recorded these as quesions in the js as comments, now I filled the gap)
-
+## lessons learned during the first version: 
+   (I recorded these as quesions in the js as comments, now I filled the gap)
 1. Only object can have reference!
    
    I know this is like a JS 101, but I actually made this mistakes when I tried to create seperate variable to store input element's value as I want to modify it more flexibly.
@@ -47,7 +47,7 @@ But this thing is not done yet, these are the things need to finish in the futur
 
 - [x] Finishing the onConfirm(), confirm button's funcion
 
-## lesson learned from this update...
+## lessons learned from this update...
 
 1. Since I simply want user to keep adding time after they hit yes on the 'yes' button,
    all I need to do is close the modal so that user can keep on editing time...
