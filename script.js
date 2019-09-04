@@ -1,10 +1,6 @@
 (function () {
     let inputs; // array
 
-    /// for later code refactoring...
-    // let keyPressedEles = [], // dom element array
-    //     keyPressedEleIndexs = []; // number array
-
     function getInputs() {
         return document.querySelectorAll('.input');
     }
@@ -135,6 +131,16 @@
             default:
                 break;
         }
+
+        onResetBtn();
+    }
+
+    function onResetBtn() {
+        let resetBtn = document.querySelector('.reset');
+        resetBtn.classList.toggle('inactive');
+        resetBtn.addEventListener('click', () => {
+            inputs.forEach(ele => ele.removeAttribute('readonly'));
+        });
     }
 
     addEvent();
