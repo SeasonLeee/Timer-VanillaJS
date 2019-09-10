@@ -71,7 +71,8 @@
     }
 
     function calculateTime(element, index) {
-        let base = 60; 
+        let base = 3; 
+        let timeout;
         console.log('calculateTime activated');
         // let inputedTime = element.value;
         switch (index) {
@@ -80,58 +81,76 @@
                 inputs[2].value = base;
                 inputs[1].value = parseInt(inputs[1].value) - 1;
                 element.value = parseInt(element.value) - 1;
-                setInterval(() => {
-                    if (parseInt(inputs[2].value) > 0) {
-                        inputs[2].value = parseInt(inputs[2].value) - 1;
+
+                function recursiveTimeout0() {
+                    if (!element.value && !inputs[1].value && inputs[2].value) {
+                        clearTimeout(timeout);
                     } else {
-                        if (parseInt(inputs[1].value) > 0) {
-                            inputs[1].value = parseInt(inputs[1].value) - 1;
-                            inputs[2].value = base;
+                        if (parseInt(inputs[2].value) > 0) {
+                            inputs[2].value = parseInt(inputs[2].value) - 1;
                         } else {
-                            if (parseInt(element.value) > 0) {
-                                element.value = parseInt(element.value) - 1;
-                                inputs[1].value = base;
+                            if (parseInt(inputs[1].value) > 0) {
+                                inputs[1].value = parseInt(inputs[1].value) - 1;
                                 inputs[2].value = base;
                             } else {
-                                element.value = '';
-                                inputs[1].value = '';
-                                inputs[2].value = '';
+                                if (parseInt(element.value) > 0) {
+                                    element.value = parseInt(element.value) - 1;
+                                    inputs[1].value = base;
+                                    inputs[2].value = base;
+                                } else {
+                                    element.value = '';
+                                    inputs[1].value = '';
+                                    inputs[2].value = '';
+                                }
                             }
                         }
+                        timeout = setTimeout(recursiveTimeout0, 1000);                        
                     }
-                }, 1000);
+                }
+                recursiveTimeout0();
                 break;
             case 1:
                 inputs[2].value = base;
                 element.value = parseInt(element.value) - 1;
-                setInterval(() => {
-                    if (parseInt(inputs[2].value) > 0) {
-                        inputs[2].value = parseInt(inputs[2].value) - 1;
+
+                function recursiveTimeout1() {
+                    if (!element.value && !inputs[2].value) {
+                        clearTimeout(timeout);
+                    } else {
+                        if (parseInt(inputs[2].value) > 0) {
+                            inputs[2].value = parseInt(inputs[2].value) - 1;
+                        } else {
+                            if (parseInt(element.value) > 0) {
+                                element.value = parseInt(element.value) - 1;
+                                inputs[2].value = base;
+                            } else {
+                                element.value = '';
+                                inputs[2].value = '';
+                            }
+                        }
+                        timeout = setTimeout(recursiveTimeout1, 1000);                        
+                    }
+                }
+                recursiveTimeout1();      
+                break;
+            case 2:
+                function recursiveTimeout2() {
+                    if (!element.value) {
+                        clearTimeout(timeout);
                     } else {
                         if (parseInt(element.value) > 0) {
                             element.value = parseInt(element.value) - 1;
-                            inputs[2].value = base;
                         } else {
                             element.value = '';
-                            inputs[2].value = '';
                         }
-                        // return;
+                        timeout = setTimeout(recursiveTimeout2, 1000);
                     }
-                }, 1000);
-                break;
-            case 2:
-                setInterval(() => {                    
-                    if (parseInt(element.value) > 0) {
-                        element.value = parseInt(element.value) - 1;
-                    } else {
-                        element.value = '';
-                    }
-                }, 1000);
+                }
+                recursiveTimeout2();
                 break;
             default:
                 break;
         }
-
         onResetBtn();
     }
 
